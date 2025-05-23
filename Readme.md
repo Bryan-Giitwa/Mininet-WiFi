@@ -35,20 +35,28 @@ To install these libraries, you should run the following commands in your termin
 ```bash
 # Update package lists
 sudo apt update
+```
 
+```bash
 # Install Mininet dependencies
 sudo apt install -y git make python3-pip
+```
 
+```bash
 # Install Mininet
 git clone https://github.com/mininet/mininet.git
 cd mininet
 sudo ./util/install.sh -a
+```
 
+```bash
 # Install Mininet-WiFi
 git clone https://github.com/intrig-unicamp/mininet-wifi.git
 cd mininet-wifi
 sudo util/install.sh -Wlnfv
+```
 
+```bash
 # Install wmediumd for wireless medium simulation
 sudo apt install -y libnl-3-dev libnl-genl-3-dev
 git clone https://github.com/bcopeland/wmediumd.git
