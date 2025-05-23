@@ -22,8 +22,8 @@ def create_network():
         controller=Controller,
         link=wmediumd,
         wmediumd_mode=interference,
-        noise_th=-70,  # -70dBm noise threshold as required
-        fading_cof=3   # Fading coefficient for realistic propagation
+        noise_th=-70,  
+        fading_cof=3  
     )
     
     info("*** Creating network components\n")
@@ -31,8 +31,8 @@ def create_network():
     # Add controller
     net.addController('c0')
     
-    # Create Access Points with linear topology configuration
-    # AP positions strategically placed to create dead spot at (25, 15)
+
+    # By positions strategically placed to create dead spot at (25, 15)
     ap1 = net.addAccessPoint('ap1', 
                             ssid='cafeteria-wifi',
                             mode='g',
@@ -101,8 +101,8 @@ def create_network():
     # Plot network topology for visualization
     net.plotGraph(max_x=50, max_y=30)
     
-    # Start network
-    info("*** Starting network\n")
+    
+    info("*** Starting network\n") # Start network
     net.build()
     net.start()
     
@@ -120,11 +120,11 @@ def implement_mobility(net):
     
     def sta1_mobility():
         """STA1: (5,10) to (45,10) from 10s-20s, speed 1-5"""
-        time.sleep(10)  # Wait until 10s
+        time.sleep(10)  # Timestamp until 10s
         info("*** STA1 starting mobility\n")
         # Move from (5,10) to (45,10) over 10 seconds
         for t in range(10):
-            x_pos = 5 + (40 * t / 10)  # Linear interpolation
+            x_pos = 5 + (40 * t / 10)  
             sta1.setPosition(f'{x_pos},10,0')
             time.sleep(1)
         info("*** STA1 mobility completed\n")
@@ -135,15 +135,15 @@ def implement_mobility(net):
         info("*** STA2 starting mobility\n")
         # Move from (15,25) to (35,15) over 30 seconds
         for t in range(30):
-            x_pos = 15 + (20 * t / 30)  # Linear interpolation for x
-            y_pos = 25 - (10 * t / 30)  # Linear interpolation for y
+            x_pos = 15 + (20 * t / 30)  
+            y_pos = 25 - (10 * t / 30)  
             sta2.setPosition(f'{x_pos},{y_pos},0')
             time.sleep(1)
         info("*** STA2 mobility completed\n")
     
     def sta3_mobility():
         """STA3: (35,5) to (15,20) from 25s-60s, speed 2-7"""
-        time.sleep(25)  # Wait until 25s
+        time.sleep(25)  # Timestamp until 25s
         info("*** STA3 starting mobility\n")
         # Move from (35,5) to (15,20) over 35 seconds
         for t in range(35):
@@ -253,8 +253,7 @@ def main():
         if 'net' in locals():
             info("*** Stopping network\n")
             net.stop()
-
+            
+  # Run the main function
 if __name__ == '__main__':
-    # Import required Link class
-    
     main()
