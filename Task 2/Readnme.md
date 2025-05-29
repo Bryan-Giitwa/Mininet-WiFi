@@ -10,6 +10,65 @@ This implementation creates an emergency response ad-hoc network using Mininet-W
 | adhoc2 | 02:00:00:00:22:00 | 192.168.2.2/24 | (75, 25) | 30    | 2              | 6            | olsrd    | adhocUH | HT40+  |
 | adhoc3 | 02:00:00:00:23:00 | 192.168.2.3/24 | (90, 15) | 30    | 3              | 7            | olsrd    | adhocUH | HT40+  |
 
+## Requirements
+
+To run this simulation, you need:
+
+- Linux operating system (Ubuntu 20.04+ recommended)
+- Python 3.x
+- Mininet and Mininet-WiFi packages
+
+### Installation
+
+To install these libraries, you should run the following commands in your terminal:
+
+```bash
+# Update package lists
+sudo apt update
+```
+
+```bash
+# Install Mininet dependencies
+sudo apt install -y git make python3-pip
+```
+
+```bash
+# Install Mininet
+git clone https://github.com/mininet/mininet.git
+cd mininet
+sudo ./util/install.sh -a
+```
+
+```bash
+# Install Mininet-WiFi
+git clone https://github.com/intrig-unicamp/mininet-wifi.git
+cd mininet-wifi
+sudo util/install.sh -Wlnfv
+```
+
+```bash
+# Install wmediumd for wireless medium simulation
+sudo apt install -y libnl-3-dev libnl-genl-3-dev
+git clone https://github.com/bcopeland/wmediumd.git
+cd wmediumd
+make
+sudo make install
+```
+
+### To run the simulation, execute the following command in the terminal:
+
+1. Make sure the script has executable permissions:
+
+```bash
+sudo chmod +x task1_wifi_network.py
+```
+
+2.  Run the script with root privileges:
+
+```bash
+sudo python3 task1_wifi_network.py
+```
+
 # Network Design Rationale
 
 ### Positioning Strategy
